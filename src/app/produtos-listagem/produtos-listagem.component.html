@@ -1,0 +1,211 @@
+<div class="container card_main">
+
+  <div class="row">
+    <div class="col-6">
+      <p class="white">produtos <img src="./assets/images/icon-glass.png" width="18px" /></p>
+    </div>
+    <div class="col-6"><span class="float-right"><img class="padding_icon" src="./assets/images/icon-menu.png" /> <img
+          src="./assets/images/icon-move.png" /> <img class="padding_icon"
+          src="./assets/images/icon-arrow.png" /></span></div>
+  </div>
+
+  <div class="card_main--central">
+
+    <div class="col text-center">
+      <button type="button" class="btn btn-outline-frutas">frutas</button> <button type="button"
+        class="btn btn-outline-massas">massas</button> <button type="button"
+        class="btn btn-outline-carnes">carnes</button> <button type="button"
+        class="btn btn-outline-laticinios">laticínios</button> <button type="button"
+        class="btn btn-outline-bebidas">bebidas</button> <button type="button"
+        class="btn btn-outline-cereais">cereais</button> <button type="button"
+        class="btn btn-outline-leguminosas">leguminosas</button>
+    </div>
+
+    <div class="row row_0">
+      <div class="col-6--left">
+        <div class="card_main--left">
+          <p class="text-center white">produtos</p>
+          <div class="card_main--product">
+            <div class="row">
+
+              <div class="col-sm-6 col6--l-r-5" *ngFor="let p of products">
+                <div class="card_product--description">
+                  <div class="row">
+                    <div class="col-10 col6--l-r-5">
+                      <p class="p_size--16"><strong>{{p.product_type}} {{p.product_name}}</strong></p>
+                    </div>
+                    <div class="col-2"><img src="./assets/images/icon-i.png" width="17px" /></div>
+                  </div>
+                  <p class="p_size--date text-center">enviado em: {{p.shipping_date | date:'dd/MM/yyyy'}}</p>
+                  <p class="p_size--12 text-center">
+                    <span [ngClass]="{
+                          'stock':p.status === 'em estoque',
+                          'stock--lacking':p.status === 'pouco em estoque',
+                          'stock--little':p.status === 'em falta'
+                        }">{{ p.status }}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6--right">
+        <div class="card_main--product--bg text-center">mercado</div>
+        <div class="card_main--right">
+          <div class="row"></div>
+          <div class="card">
+            <div class="list-group list-group-flush">
+
+              <div class="row border_bottom">
+                <div class="col-md-1">
+                  <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                </div>
+                <div class="col-md-11">
+                  <p class="padding-6">
+                    <span class="float-left p_size--10">athyllas mercado</span>
+                    <span class="float-right p_size--10">60%</span>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 60%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row border_bottom">
+                <div class="col-md-1">
+                  <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                </div>
+                <div class="col-md-11">
+                  <p class="padding-6">
+                    <span class="float-left p_size--10">mercadinho do zé</span>
+                    <span class="float-right p_size--10">85%</span>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 85%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row border_bottom">
+                <div class="col-md-1">
+                  <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                </div>
+                <div class="col-md-11">
+                  <p class="padding-6">
+                    <span class="float-left p_size--10">mini carrefour</span>
+                    <span class="float-right p_size--10">20%</span>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 20%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row border_bottom">
+                <div class="col-md-1">
+                  <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                </div>
+                <div class="col-md-11">
+                  <p class="padding-6">
+                    <span class="float-left p_size--10">extra express</span>
+                    <span class="float-right p_size--10">72%</span>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 72%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row border_bottom">
+                <div class="col-md-1">
+                  <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                </div>
+                <div class="col-md-11">
+                  <p class="padding-6">
+                    <span class="float-left p_size--10">marcadinho da tia maria</span>
+                    <span class="float-right p_size--10">42%</span>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 42%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row border_bottom">
+                  <div class="col-md-1">
+                    <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                  </div>
+                  <div class="col-md-11">
+                    <p class="padding-6">
+                      <span class="float-left p_size--10">mercadinho marealva</span>
+                      <span class="float-right p_size--10">77%</span>
+                    </p>
+                    <div class="progress">
+                      <div class="progress-bar bg-success" style="width: 77%;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row border_bottom">
+                    <div class="col-md-1">
+                      <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                    </div>
+                    <div class="col-md-11">
+                      <p class="padding-6">
+                        <span class="float-left p_size--10">boteco do tio joão</span>
+                        <span class="float-right p_size--10">43%</span>
+                      </p>
+                      <div class="progress">
+                        <div class="progress-bar bg-success" style="width: 43%;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row border_bottom">
+                      <div class="col-md-1">
+                        <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                      </div>
+                      <div class="col-md-11">
+                        <p class="padding-6">
+                          <span class="float-left p_size--10">mercearia do wilker</span>
+                          <span class="float-right p_size--10">33%</span>
+                        </p>
+                        <div class="progress">
+                          <div class="progress-bar bg-success" style="width: 33%;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row border_bottom">
+                        <div class="col-md-1">
+                          <img src="./assets/images/icon-user.png" width="32px" class="margin_user" />
+                        </div>
+                        <div class="col-md-11">
+                          <p class="padding-6">
+                            <span class="float-left p_size--10">mercado do paulinho</span>
+                            <span class="float-right p_size--10">80%</span>
+                          </p>
+                          <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 80%;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
